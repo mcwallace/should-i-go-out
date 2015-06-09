@@ -71,7 +71,7 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
 }
 
 var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
-var suggestion = document.getElementById("suggestions");
+var suggestion = document.getElementById("sugg_text");
 suggestion.textContent = goOut;
 populateWeather(today_weather, yesterday_weather, tomorrow_weather);
 

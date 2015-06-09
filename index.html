@@ -11,52 +11,52 @@
         <title>Should I Go Out?</title>
     </head>
     <body>
-        <div class="topbuttons" id="me">
+        <div class="topbutton" id="me">
             <p>Me!</p>
         </div>
-        <div class="topbuttons" id="form">
+        <div class="topbutton zip" id="form">
         <label>Zip Code:
             <input type="text" name="zip" id="zip" autocomplete="postal-code" maxlength="5" />
         </label>
         <input type="submit" value="Submit" />
         </div>
-        <div class="topbuttons" id="friends">
+        <div class="topbutton" id="friends">
             <p>Friends</p>
         </div>
         &nbsp;
         <div id="weathertitle">
             <h1>Today's Weather</h1>
         </div>
-        <div class="weathericons" id="yesterday1">
+        <div class="weathericons">
+            <p id="yesterday1"></p>
+        </div>
+        <div class="weathericons">
+            <p id="yesterday2"></p>
+        </div>
+        <div class="weathericons">
+            <p id="today"></p>
+        </div>
+        <div class="weathericons">
+            <p  id="tomorrow1"></p>
+        </div>
+        <div class="weathericons">
+            <p id="tomorrow2"></p>
+        </div>
+        &nbsp;
+        <div class="todaysweather">
+            <p id="high"></p>
             <p></p>
         </div>
-        <div class="weathericons" id="yesterday2">
-            <p></p>
+        <div class="todaysweather">
+            <p id="now"></p>
         </div>
-        <div class="weathericons" id="today">
-            <p></p>
-        </div>
-        <div class="weathericons" id="tomorrow1">
-            <p></p>
-        </div>
-        <div class="weathericons" id="tomorrow2">
+        <div class="todaysweather">
+            <p id="low"></p>
             <p></p>
         </div>
         &nbsp;
-        <div class="todaysweather" id="high">
-            <p></p>
-            <p></p>
-        </div>
-        <div class="todaysweather" id="now">
-            <h1> F</h1>
-        </div>
-        <div class="todaysweather" id="low">
-            <p></p>
-            <p></p>
-        </div>
-        &nbsp;
-        <div id="suggestions">
-            <p></p>
+        <div class="suggestions">
+            <p id="sugg_text"></p>
         </div>
     </body>
     <script src="script.js"></script>

@@ -33,31 +33,31 @@ var today_weather = JSON.parse(xhr.response).current_observation;
 var tomorrow_weather = JSON.parse(thr.response)
 var yesterday_weather = JSON.parse(yhr.response).history.dailysummary;
 
-console.log("tomorrow " + tomorrow_weather);
-console.log("yesterday " + yesterday_weather);
-console.log("today " + today_weather);
+console.log(tomorrow_weather);
+console.log(yesterday_weather);
+console.log(today_weather);
 
-function GoOutToday(today_weather, yesterday_weather, tomorrow_weather) {
+function goOutToday(today_weather, yesterday_weather, tomorrow_weather) {
     var today = new Date() ; 
     var today_temp = today_weather.temp_f;
     var yesterday_temp = yesterday_weather.meantempi;
     var tomorrow_temp = 90 // placeholder
     if (JSON.parse(today_weather.precip_today_in) > 1) {
-            return "Stay inside! Water might fall from the sky!"
+            console.log("Stay inside! Water might fall from the sky!");
     } else if((today.getMonth() > 4) && (today.getMonth() < 10)) {
         // summer
         if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
-            return "You should go out today! It's going to be noticeably cool!";
+            console.log("You should go out today! It's going to be noticeably cool!");
         }
     } else {
         //winter
         if(((today_temp - 2) > yesterday_temp) && ((today_temp - 2) > tomorrow_temp)) {
-            return "You should go out today! It's going to be noticeably warm!";
+            console.log("You should go out today! It's going to be noticeably warm!");
         }
     }
 }
 
-console.log(GoOutToday(today_weather, yesterday_weather, tomorrow_weather));
+goOutToday(today_weather, yesterday_weather, tomorrow_weather);
 
 
 // the rest of my CRUDE AF outline

@@ -31,11 +31,17 @@ label {
 p {
     color: #3E517A;
 }
+p#sugg-text {
+    font-size:45px;
+}
 p#today {
     font-size:50px;
 }
 p#yesterday2, p#tomorrow1 {
     font-size:30px;
+}
+p#yesterday1, p#tomorrow2 {
+    font-size:12px; 
 }
 
 .suggestions {
@@ -55,24 +61,18 @@ p#yesterday2, p#tomorrow1 {
     height:60px;
     display:inline-block;
     background-color: #CFFFF1;
-    border-radius:5px;
-    border:2px solid #3E517A;
+    border-radius:35px;
     text-align:center;
 }
 .topbutton.zip {
     width:160px;
     height:70px;
     padding:5px;
-    display:inline-block;
-    background-color: #CFFFF1;
-    border-radius:5px;
-    border:2px solid #3E517A;
-    text-align:center;
     padding-top:10px;
 }
 .weathericons {
     background-color:#46B1C9;
-    border-radius:5px;
+    border-radius:90px;
     display:inline-block;
     text-align:center;
     margin-left:auto;
@@ -90,14 +90,20 @@ p#yesterday2, p#tomorrow1 {
 }
 .weathericons.wide {
     margin-right:1%;
-    width:35%;
+    width:38%;
     height:180px;
 }
 #me {
     float:left;
+    height:70px;
+    width:70px;
+    border-radius:35px;
 }
 #friends {
     float:right;
+    height:70px;
+    width:70px;
+    border-radius:35px;
 }
 #weathertitle {
     display:block;

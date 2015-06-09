@@ -19,10 +19,32 @@
 body {
     background-color: #99FFFF;
     font-family:Arial, sans-serif;
+    padding:15px;
+    max-width:900px;
 }
-.topbuttons {
+h1 {
+    color:#3E517A ;
+}
+label {
+    color:#3E517A;
+}
+p {
+    color: #3E517A;
+}
+
+.topbutton {
     width:60px;
     height:60px;
+    display:inline-block;
+    background-color: #CFFFF1;
+    border-radius:5px;
+    border:2px solid #3E517A;
+    text-align:center;
+}
+.topbutton.zip {
+    width:160px;
+    height:80px;
+    padding:5px;
     display:inline-block;
     background-color: #CFFFF1;
     border-radius:5px;

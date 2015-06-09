@@ -19,7 +19,7 @@ var tomorrow_request = api + "/forecast/q/" + zip + ",us.json";
 var xhr = new XMLHttpRequest();
 xhr.open("GET", today_request, false);
 xhr.send();
-console.log("Fires???");
+console.log("parentheses???");
 
 var yhr = new XMLHttpRequest();
 yhr.open("GET", yesterday_request, false);
@@ -51,7 +51,7 @@ function GoOutToday(today_weather, yesterday_weather, tomorrow_weather) {
         }
     } else {
         //winter
-        if(((today_temp - 2) > yesterday_temp) && (today_temp - 2) > tomorrow_temp)) {
+        if(((today_temp - 2) > yesterday_temp) && ((today_temp - 2) > tomorrow_temp)) {
             return "You should go out today! It's going to be noticeably warm!";
         }
     }

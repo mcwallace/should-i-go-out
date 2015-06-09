@@ -40,41 +40,25 @@ function goOutToday(today, yesterday, tomorrow) {
     var this_date = new Date();
     var today_temp = today.temp_f;
     var yesterday_temp = parseInt(yesterday.meantempi);
-    var tomorrow_temp = parseInt(tomorrow.high.fahrenheit);  // (parseInt(tomorrow.simpleforecast[2].high.farenheit) + parseInt(tomorrow.simpleforecast[2].low.farenheit))/2 // placeholder
+    var tomorrow_temp = parseInt(tomorrow.high.fahrenheit); 
+    var result = "The weather today isn't remarkable."; 
     if (parseInt(today.precip_today_in) > 1) {
-        console.log("Stay inside! Water might fall from the sky!");
+        result = "Stay inside! Water might fall from the sky!";
     } else if((this_date.getMonth() > 4) && (this_date.getMonth() < 10)) {
         // summer
         if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
-            console.log("You should go out today! It's going to be noticeably cool!");
+            result = "You should go out today! It's going to be noticeably cool!";
         }
     } else {
         //winter
         if(((today_temp - 2) > yesterday_temp) && ((today_temp - 2) > tomorrow_temp)) {
-            console.log("You should go out today! It's going to be noticeably warm!");
+            result = "You should go out today! It's going to be noticeably warm!";
         }
     }
     console.log("goOutToday worked!");
+    return result
 }
 
-goOutToday(today_weather, yesterday_weather, tomorrow_weather);
-
-
-// my CRUDE AF outline
-
-// if weather_data.date > today.date - 18h: //an attempt to reduce the number of calls to the api/day
-//     weather_data = weather_data
-//     if not yesterday.exists()
-//         yesterday = api….(today.date-1d).json
-// else:
-//     yesterday = weather_data
-//     weather_data = http://api.wunderground.com/api/e05c147cb6482135/conditions/q/CA/San_Francisco.json[current_observation])
-
-// function lessthan(a, b) {
-// //so we only return true on noticeably better days
-//     if (a + 3) < b {
-//         return true;
-//     } else {
-//         return false ; 
-//     }
-// }
+var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
+var suggestion = document.getElementByID("suggestions");
+suggestion.textContent = goOut;

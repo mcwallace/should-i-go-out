@@ -58,7 +58,3 @@ function goOutToday(today, yesterday, tomorrow) {
     console.log("goOutToday worked!");
     return result
 }
-
-var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
-var suggestion = document.getElementById("suggestions");
-suggestion.textContent = goOut;

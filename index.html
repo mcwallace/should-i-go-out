@@ -8,6 +8,11 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <link rel="stylesheet" href="style.css" />
         <script src="script.js"></script>
+        <script>
+        var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
+        var suggestion = document.getElementById("suggestions");
+        suggestion.textContent = goOut;
+        </script>
         <title>Should I Go Out?</title>
     </head>
     <body>

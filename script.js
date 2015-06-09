@@ -16,12 +16,12 @@ var today_request = api + "/conditions/q/" + zip + ",us.json";
 var yesterday_request = api + "/yesterday/q/" + zip + ",us.json";
 
 var xhr = new XMLHttpRequest();
-xhr.open("GET", today_request, false);
+xhr.open("GET", today_request);
 xhr.send();
 console.log("progress??");
 
 var yhr = new XMLHttpRequest();
-yhr.open("GET", yesterday_request, false);
+yhr.open("GET", yesterday_request);
 yhr.send();
 
 var today_weather = JSON.parse(xhr.response).current_observation;

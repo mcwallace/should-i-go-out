@@ -2,7 +2,7 @@
 // put attribution @ footer
 // GET USER LOCATION via user prompt if mobile, ip address if desktop or mobile doesn't give permissions
 
-// eventually this should be the result of a form, hardcoded to philly for testing
+// eventually this should be the result of a form, but now it's hardcoded to philly for testing
 var zip = 19104;
 
 
@@ -36,26 +36,26 @@ function goOutToday(today, yesterday, tomorrow) {
     var today_temp = today.temp_f;
     var yesterday_temp = yesterday.meantempi;
     var tomorrow_temp = 99;  // (parseInt(tomorrow.simpleforecast[2].high.farenheit) + parseInt(tomorrow.simpleforecast[2].low.farenheit))/2 // placeholder
-    if (parseInt(today.precip_today_in) > 1) {
-        console.log("Stay inside! Water might fall from the sky!");
-    } else if((today.getMonth() > 4) && (today.getMonth() < 10)) {
-        // summer
-        if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
-            console.log("You should go out today! It's going to be noticeably cool!");
-        }
-    } else {
-        //winter
-        if(((today_temp - 2) > yesterday_temp) && ((today_temp - 2) > tomorrow_temp)) {
-            console.log("You should go out today! It's going to be noticeably warm!");
-        }
-    }
+    // if (parseInt(today.precip_today_in) > 1) {
+    //     console.log("Stay inside! Water might fall from the sky!");
+    // } else if((today.getMonth() > 4) && (today.getMonth() < 10)) {
+    //     // summer
+    //     if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
+    //         console.log("You should go out today! It's going to be noticeably cool!");
+    //     }
+    // } else {
+    //     //winter
+    //     if(((today_temp - 2) > yesterday_temp) && ((today_temp - 2) > tomorrow_temp)) {
+    //         console.log("You should go out today! It's going to be noticeably warm!");
+    //     }
+    // }
     console.log("goOutToday worked!");
 }
 
 goOutToday(today_weather, yesterday_weather, tomorrow_weather);
 
 
-// the rest of my CRUDE AF outline
+// my CRUDE AF outline
 
 // if weather_data.date > today.date - 18h: //an attempt to reduce the number of calls to the api/day
 //     weather_data = weather_data
@@ -65,16 +65,6 @@ goOutToday(today_weather, yesterday_weather, tomorrow_weather);
 //     yesterday = weather_data
 //     weather_data = http://api.wunderground.com/api/e05c147cb6482135/conditions/q/CA/San_Francisco.json[current_observation])
 
-
-// var yesterday, today, tomorrow, summer
-
-// summer = true if (today.date in May 1 to Nov 1)
-// today = weather_data.temp_f
-// today_rain = qpf_allday
-// today_snow = snow_allday
-
-
-
 // function lessthan(a, b) {
 // //so we only return true on noticeably better days
 //     if (a + 3) < b {
@@ -83,20 +73,3 @@ goOutToday(today_weather, yesterday_weather, tomorrow_weather);
 //         return false ; 
 //     }
 // }
-
-
-// if (today_rain || today_snow) {
-//     false
-// } else if (summer) {
-//     if (lessthan(today, yesterday)) || (lessthan(today, tomorrow)) {
-//         true;
-//     } else {
-//         false;
-//     }
-// } else {
-//     if (lessthan(yesterday, today) || (lessthan(tomorrow, today) {
-//         true;
-//     } else {
-//         false;
-//     }
-// */

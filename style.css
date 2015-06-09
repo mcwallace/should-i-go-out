@@ -31,7 +31,18 @@ label {
 p {
     color: #3E517A;
 }
-
+.suggestions {
+    border:3px solid #3E517A;
+    border-radius:5px;
+    background-color:#CFFFF1;
+    display:block;
+    clear:both;
+    width:95%;
+    height:300px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
 .topbutton {
     width:60px;
     height:60px;
@@ -43,13 +54,14 @@ p {
 }
 .topbutton.zip {
     width:160px;
-    height:80px;
+    height:70px;
     padding:5px;
     display:inline-block;
     background-color: #CFFFF1;
     border-radius:5px;
     border:2px solid #3E517A;
     text-align:center;
+    padding-top:10px;
 }
 #me {
     float:left;
@@ -73,31 +85,20 @@ p {
     margin-left:auto;
     margin-right:auto;
 }
-#yesterday1 {
-    margin-left:1%;
+#narrow {
     margin-right:1%;
     width:10%;
     height:80px;
 }
-#yesterday2 {
+#medium {
     margin-right:1%;
     width:17%;
     height:120px;
 }
-#today {
+#wide {
     margin-right:1%;
     width:35%;
     height:180px;
-}
-#tomorrow1 {
-    margin-right:1%;
-    width:17%;
-    height:120px;
-}
-#tomorrow2 {
-    margin-right:1%;
-    width:10%;
-    height:80px;
 }
 .todaysweather {
     display:inline-block;
@@ -105,16 +106,4 @@ p {
     width:32%;
     margin-left:auto;
     margin-right:auto;
-}
-#suggestions {
-    border:1px solid black;
-    border-radius:5px;
-    background-color:#CFFFF1;
-    display:block;
-    clear:both;
-    width:95%;
-    height:300px;
-    margin-left:auto;
-    margin-right:auto;
-    text-align:center;
 }

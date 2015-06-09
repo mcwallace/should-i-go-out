@@ -5,12 +5,20 @@
 // eventually this should be the result of a form, hardcoded to philly for testing
 var zip = 19104;
 
-var api = "http://api.wunderground.com/api/e05c147cb6482135/"
 
-var today_weather = api + "/conditions/q/" + zip + ".json"
+//should eventually switch to a different api, if traffic increases
+// http://openweathermap.org/appid  
+// https://developer.forecast.io/
+var api = "http://api.wunderground.com/api/e05c147cb6482135/";
 
+// TODO: find a way to combine these queries into one query--can we get the entire week's weather in one call???
+var today_request = api + "/conditions/q/" + zip + ",us.json";
+var yesterday_request = api + "/yesterday/q" + zip + ",us.json";
 
-
+var xhr = new XMLHttpRequest();
+xhr.open("GET", today_request, false);
+xhr.send();
+var today_weather = xhr.
 
 
 // the rest of my CRUDE AF outline

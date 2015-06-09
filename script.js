@@ -22,29 +22,42 @@ xhr.send();
 console.log("Fires???");
 
 var yhr = new XMLHttpRequest();
-yhr.open("GET", today_request, false);
+yhr.open("GET", yesterday_request, false);
 yhr.send();
 
 var thr = new XMLHttpRequest();
-thr.open("GET", yesterday_request, false);
+thr.open("GET", tomorrow_request, false);
 thr.send();
 
 var today_weather = JSON.parse(xhr.response).current_observation;
-var tomorrow_weather = JSON.parse(thr.response)
+var tomorrow_weather = JSON.parse(thr.response).history.dailysummary;
 var yesterday_weather = JSON.parse(yhr.response)
 
-console.log(tomorrow_weather);
-console.log(yesterday_weather);
+console.log("tomorrow " + tomorrow_weather);
+console.log("yesterday " + yesterday_weather);
+console.log("today " + today_weather);
 
-// function GoOutToday(today_weather, yesterday_weather, tomorrow_weather) {
-//     var today = new Date() ; 
-//     today_temp = today_weather.temp_f;
-//     yesterday_temp = yesterday_weather.
-//     if((today.getMonth() > 4) && (today.getMonth() < 10)) {
-//         // summer
+function GoOutToday(today_weather, yesterday_weather, tomorrow_weather) {
+    var today = new Date() ; 
+    var today_temp = today_weather.temp_f;
+    var yesterday_temp = yesterday_weather.meantempi;
+    var tomorrow_temp = 2 // placeholder
+    if (JSON.parse(today_weather.precip_today_in) > 1) {
+            return "Stay inside! Water might fall from the sky!"
+    } else if((today.getMonth() > 4) && (today.getMonth() < 10)) {
+        // summer
+        if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
+            return "You should go out today! It's going to be noticeably cool!";
+        }
+    } else {
+        //winter
+        if(((today_temp - 2) > yesterday_temp) && (today_temp - 2) > tomorrow_temp)) {
+            return "You should go out today! It's going to be noticeably warm!";
+        }
+    }
+}
 
-//     }
-// }
+console.log(GoOutToday(today_weather, yesterday_weather, tomorrow_weather));
 
 
 // the rest of my CRUDE AF outline

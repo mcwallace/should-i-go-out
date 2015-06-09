@@ -18,6 +18,7 @@ var yesterday_request = api + "/yesterday/q" + zip + ",us.json";
 var xhr = new XMLHttpRequest();
 xhr.open("GET", today_request, false);
 xhr.send();
+console.log("Fires???");
 console.log(xhr);
 console.log(xhr[1].current_observation);
 console.log(xhr.current_observation);

@@ -16,7 +16,7 @@ var today_request = api + "/conditions/q/" + zip + ",us.json";
 var yesterday_request = api + "/yesterday/q/" + zip + ",us.json";
 var tomorrow_request = api + "/forecast/q/" + zip + ",us.json";
 
-console.log("logging line by line KILL EVERYTHING");
+.log("logging line by line KILL EVERYTHING");
 var xhr = new XMLHttpRequest();
 xhr.open("GET", today_request, false);
 xhr.send();
@@ -28,16 +28,9 @@ yhr.send();
 var thr = new XMLHttpRequest();
 thr.open("GET", tomorrow_request, false);
 thr.send()
-console.log("line by line: YESTERDAY");
 
-console.log("line by line PARSE TODAY");
 var today_weather = JSON.parse(xhr.response).current_observation;
-
-console.log("line by line PARSE YESTERDAY");
 var yesterday_weather = JSON.parse(yhr.response).history.dailysummary;
-
-console.log("line by line PARSE TOMORROW");
-
 var tomorrow_weather = JSON.parse(thr.response).forecast.simpleforecast.forecastday[1];
 
 console.log(tomorrow_weather);
@@ -48,19 +41,19 @@ function goOutToday(today, yesterday, tomorrow) {
     var today_temp = today.temp_f;
     var yesterday_temp = yesterday.meantempi;
     var tomorrow_temp = parseInt(tomorrow.high.farenheit);  // (parseInt(tomorrow.simpleforecast[2].high.farenheit) + parseInt(tomorrow.simpleforecast[2].low.farenheit))/2 // placeholder
-    // if (parseInt(today.precip_today_in) > 1) {
-    //     console.log("Stay inside! Water might fall from the sky!");
-    // } else if((today.getMonth() > 4) && (today.getMonth() < 10)) {
-    //     // summer
-    //     if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
-    //         console.log("You should go out today! It's going to be noticeably cool!");
-    //     }
-    // } else {
-    //     //winter
-    //     if(((today_temp - 2) > yesterday_temp) && ((today_temp - 2) > tomorrow_temp)) {
-    //         console.log("You should go out today! It's going to be noticeably warm!");
-    //     }
-    // }
+    if (parseInt(today.precip_today_in) > 1) {
+        console.log("Stay inside! Water might fall from the sky!");
+    } else if((today.getMonth() > 4) && (today.getMonth() < 10)) {
+        // summer
+        if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
+            console.log("You should go out today! It's going to be noticeably cool!");
+        }
+    } else {
+        //winter
+        if(((today_temp - 2) > yesterday_temp) && ((today_temp - 2) > tomorrow_temp)) {
+            console.log("You should go out today! It's going to be noticeably warm!");
+        }
+    }
     console.log("goOutToday worked!");
 }
 

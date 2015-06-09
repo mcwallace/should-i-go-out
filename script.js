@@ -14,7 +14,6 @@ var api = "http://api.wunderground.com/api/e05c147cb6482135";
 // TODO: find a way to combine these queries into one query--can we get the entire week's weather in one call???
 var today_request = api + "/conditions/q/" + zip + ",us.json";
 var yesterday_request = api + "/yesterday/q/" + zip + ",us.json";
-var tomorrow_request = api + "/forecast/q/" + zip + ",us.json";
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", today_request, false);
@@ -25,24 +24,19 @@ var yhr = new XMLHttpRequest();
 yhr.open("GET", yesterday_request, false);
 yhr.send();
 
-var thr = new XMLHttpRequest();
-thr.open("GET", tomorrow_request, false);
-thr.send();
-
 var today_weather = JSON.parse(xhr.response).current_observation;
-var tomorrow_weather = JSON.parse(thr.response)
 var yesterday_weather = JSON.parse(yhr.response).history.dailysummary;
+var tomorrow_weather = JSON.parse(xhr.forecast).simpleforecast[2];
 
 console.log(tomorrow_weather);
 console.log(yesterday_weather);
 console.log(today_weather);
 
-function goOutToday(today_weather, yesterday_weather, tomorrow_weather) {
-    var today = new Date() ; 
-    var today_temp = today_weather.temp_f;
-    var yesterday_temp = yesterday_weather.meantempi;
-    var tomorrow_temp = 90 // placeholder
-    if (JSON.parse(today_weather.precip_today_in) > 1) {
+function goOutToday(today, yesterday, tomorrow) {
+    var today_temp = today.temp_f;
+    var yesterday_temp = yesterday.meantempi;
+    var tomorrow_temp = (parseInt(tomorrow.high.farenheit) + parseInt(tomorrow.low.farenheit))/2 // placeholder
+    if (parseInt(today.precip_today_in) > 1) {
             console.log("Stay inside! Water might fall from the sky!");
     } else if((today.getMonth() > 4) && (today.getMonth() < 10)) {
         // summer
@@ -55,6 +49,7 @@ function goOutToday(today_weather, yesterday_weather, tomorrow_weather) {
             console.log("You should go out today! It's going to be noticeably warm!");
         }
     }
+    console.log("goOutToday worked!");
 }
 
 goOutToday(today_weather, yesterday_weather, tomorrow_weather);

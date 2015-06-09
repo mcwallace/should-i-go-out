@@ -18,15 +18,15 @@ var tomorrow_request = api + "/forecast/q/" + zip + ",us.json";
 
 console.log("logging line by line KILL EVERYTHING");
 var xhr = new XMLHttpRequest();
-xhr.open("GET", today_request);
+xhr.open("GET", today_request, false);
 xhr.send();
 
 var yhr = new XMLHttpRequest();
-yhr.open("GET", yesterday_request);
+yhr.open("GET", yesterday_request, false);
 yhr.send();
 
 var thr = new XMLHttpRequest();
-thr.open("GET", tomorrow_request);
+thr.open("GET", tomorrow_request, false);
 thr.send()
 console.log("line by line: YESTERDAY");
 

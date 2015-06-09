@@ -18,15 +18,20 @@ var yesterday_request = api + "/yesterday/q/" + zip + ",us.json";
 var xhr = new XMLHttpRequest();
 xhr.open("GET", today_request);
 xhr.send();
-console.log("checking json??");
+console.log("line by line TODAY");
 
 var yhr = new XMLHttpRequest();
 yhr.open("GET", yesterday_request);
 yhr.send();
 
+console.log("line by line: YESTERDAY");
+
 var today_weather = JSON.parse(xhr.response).current_observation;
+console.log("line by line PARSE TODAY");
 var yesterday_weather = JSON.parse(yhr.response).history.dailysummary;
+console.log("line by line PARSE YESTERDAY");
 var tomorrow_weather = JSON.parse(xhr.forecast);
+console.log("line by line PARSE TOMORROW");
 
 console.log(tomorrow_weather);
 console.log(yesterday_weather);

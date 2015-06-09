@@ -18,7 +18,9 @@ var yesterday_request = api + "/yesterday/q" + zip + ",us.json";
 var xhr = new XMLHttpRequest();
 xhr.open("GET", today_request, false);
 xhr.send();
-var today_weather = xhr.
+console.log(xhr);
+console.log(xhr[1].current_observation);
+console.log(xhr.current_observation);
 
 
 // the rest of my CRUDE AF outline

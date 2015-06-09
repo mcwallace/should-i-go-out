@@ -26,7 +26,7 @@ body {
     display:inline-block;
     background-color: #CFFFF1;
     border-radius:5px;
-    border:2px solid #000099;
+    border:2px solid #3E517A;
     text-align:center;
 }
 #me {
@@ -43,7 +43,7 @@ body {
     text-align:center;
 }
 .weathericons {
-    background-color:#70CAD1;
+    background-color:#46B1C9;
     border-radius:5px;
     border:1px solid #3E517A;
     display:inline-block;

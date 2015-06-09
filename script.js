@@ -66,7 +66,7 @@ function populateWeather(today, yesterday, tomorrow) {
     var tod_low = document.getElementById("low");
     var tod_now = document.getElementById("now");
     yesterday.textContent = parseInt(yesterday.meantempi);
-    tomorrow.textContent = parseInt(tomorrow.high.farenheit);
+    tomorrow.textContent = parseInt(tomorrow.high.fahrenheit);
     today.textContent = today.temp_f;
 }
 

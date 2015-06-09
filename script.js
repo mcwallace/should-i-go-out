@@ -58,7 +58,19 @@ function goOutToday(today, yesterday, tomorrow) {
     console.log("goOutToday worked!");
     return result
 }
+function populateWeather(today, yesterday, tomorrow) {
+    var yesterday = document.getElementById("yesterday2");
+    var tomorrow = document.getElementById("tomorrow1");
+    var today = document.getElementById("today");
+    var tod_high = document.getElementById("high");
+    var tod_low = document.getElementById("low");
+    var tod_now = document.getElementById("now");
+    yesterday.textContent = parseInt(yesterday.meantempi);
+    tomorrow.textContent = parseInt(tomorrow.high.farenheit);
+    today.textContent = today.temp_f;
+}
 
 var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
 var suggestion = document.getElementById("suggestions");
 suggestion.textContent = goOut;
+populateWeather(today_weather, yesterday_weather, tomorrow_weather);

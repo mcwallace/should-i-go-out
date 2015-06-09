@@ -52,23 +52,29 @@ body {
     margin-right:auto;
 }
 #yesterday1 {
-    width:12%;
+    margin-left:1%;
+    margin-right:1%;
+    width:10%;
     height:80px;
 }
 #yesterday2 {
-    width:19%;
+    margin-right:1%;
+    width:17%;
     height:120px;
 }
 #today {
-    width:33%;
+    margin-right:1%;
+    width:35%;
     height:180px;
 }
 #tomorrow1 {
-    width:19%;
+    margin-right:1%;
+    width:17%;
     height:120px;
 }
 #tomorrow2 {
-    width:12%;
+    margin-right:1%;
+    width:10%;
     height:80px;
 }
 .todaysweather {

@@ -58,19 +58,20 @@ function goOutToday(today, yesterday, tomorrow) {
     console.log("goOutToday worked!");
     return result
 }
-function populateWeather(today, yesterday, tomorrow) {
+function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
     var yesterday = document.getElementById("yesterday2");
     var tomorrow = document.getElementById("tomorrow1");
     var today = document.getElementById("today");
     var tod_high = document.getElementById("high");
     var tod_low = document.getElementById("low");
     var tod_now = document.getElementById("now");
-    yesterday.textContent = parseInt(yesterday.meantempi);
-    tomorrow.textContent = parseInt(tomorrow.high.fahrenheit);
-    today.textContent = today.temp_f;
+    yesterday.textContent = parseInt(yesterday_weather.meantempi);
+    tomorrow.textContent = parseInt(tomorrow_weather.high.fahrenheit);
+    today.textContent = today_weather.temp_f;
 }
 
 var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
 var suggestion = document.getElementById("suggestions");
 suggestion.textContent = goOut;
 populateWeather(today_weather, yesterday_weather, tomorrow_weather);
+

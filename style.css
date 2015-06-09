@@ -31,7 +31,7 @@ label {
 p {
     color: #3E517A;
 }
-p#sugg-text {
+p#sugg_text {
     font-size:45px;
 }
 p#today {
@@ -45,8 +45,7 @@ p#yesterday1, p#tomorrow2 {
 }
 
 .suggestions {
-    border:3px solid #3E517A;
-    border-radius:5px;
+    border-radius:35px;
     background-color:#CFFFF1;
     display:block;
     clear:both;

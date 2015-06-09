@@ -14,14 +14,37 @@ var api = "http://api.wunderground.com/api/e05c147cb6482135/";
 // TODO: find a way to combine these queries into one query--can we get the entire week's weather in one call???
 var today_request = api + "/conditions/q/" + zip + ",us.json";
 var yesterday_request = api + "/yesterday/q" + zip + ",us.json";
+var tomorrow_request = api + "/forecast/q" + zip + ",us.json";
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", today_request, false);
 xhr.send();
 console.log("Fires???");
-console.log(xhr);
-console.log(xhr[1].current_observation);
-console.log(xhr.current_observation);
+
+var yhr = new XMLHttpRequest();
+yhr.open("GET", today_request, false);
+yhr.send();
+
+var thr = new XMLHttpRequest();
+thr.open("GET", yesterday_request, false);
+thr.send();
+
+var today_weather = JSON.parse(xhr.response).current_observation;
+var tomorrow_weather = JSON.parse(thr.response)
+var yesterday_weather = JSON.parse(yhr.response)
+
+console.log(tomorrow_weather);
+console.log(yesterday_weather);
+
+// function GoOutToday(today_weather, yesterday_weather, tomorrow_weather) {
+//     var today = new Date() ; 
+//     today_temp = today_weather.temp_f;
+//     yesterday_temp = yesterday_weather.
+//     if((today.getMonth() > 4) && (today.getMonth() < 10)) {
+//         // summer
+
+//     }
+// }
 
 
 // the rest of my CRUDE AF outline

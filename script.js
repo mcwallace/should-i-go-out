@@ -18,7 +18,7 @@ var yesterday_request = api + "/yesterday/q/" + zip + ",us.json";
 var xhr = new XMLHttpRequest();
 xhr.open("GET", today_request, false);
 xhr.send();
-console.log("parentheses???");
+console.log("progress??");
 
 var yhr = new XMLHttpRequest();
 yhr.open("GET", yesterday_request, false);

@@ -31,6 +31,13 @@ label {
 p {
     color: #3E517A;
 }
+p#wide {
+    font-size:50px;
+}
+p#medium {
+    font-size:30px;
+}
+
 .suggestions {
     border:3px solid #3E517A;
     border-radius:5px;
@@ -63,6 +70,29 @@ p {
     text-align:center;
     padding-top:10px;
 }
+.weathericons {
+    background-color:#46B1C9;
+    border-radius:5px;
+    display:inline-block;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+.weathericons.medium {
+    margin-right:1%;
+    width:17%;
+    height:120px;
+}
+.weathericons.narrow {
+    margin-right:1%;
+    width:10%;
+    height:80px;
+}
+.weathericons.wide {
+    margin-right:1%;
+    width:35%;
+    height:180px;
+}
 #me {
     float:left;
 }
@@ -75,30 +105,6 @@ p {
     margin-left:auto;
     margin-right:auto;
     text-align:center;
-}
-.weathericons {
-    background-color:#46B1C9;
-    border-radius:5px;
-    border:1px solid #3E517A;
-    display:inline-block;
-    text-align:center;
-    margin-left:auto;
-    margin-right:auto;
-}
-#narrow {
-    margin-right:1%;
-    width:10%;
-    height:80px;
-}
-#medium {
-    margin-right:1%;
-    width:17%;
-    height:120px;
-}
-#wide {
-    margin-right:1%;
-    width:35%;
-    height:180px;
 }
 .todaysweather {
     display:inline-block;

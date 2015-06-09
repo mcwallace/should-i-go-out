@@ -24,7 +24,7 @@ body {
     width:60px;
     height:60px;
     display:inline-block;
-    background-color: white;
+    background-color: #CFFFF1;
     border-radius:5px;
     border:2px solid #000099;
     text-align:center;
@@ -43,9 +43,9 @@ body {
     text-align:center;
 }
 .weathericons {
-    background-color:blue;
+    background-color:#70CAD1;
     border-radius:5px;
-    border:1px solid black;
+    border:1px solid #3E517A;
     display:inline-block;
     text-align:center;
     margin-left:auto;
@@ -81,7 +81,7 @@ body {
 #suggestions {
     border:1px solid black;
     border-radius:5px;
-    background-color:white;
+    background-color:#CFFFF1;
     display:block;
     clear:both;
     width:95%;

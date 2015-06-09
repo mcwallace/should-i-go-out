@@ -29,7 +29,7 @@ thr.open("GET", tomorrow_request, false);
 thr.send()
 
 var today_weather = JSON.parse(xhr.response).current_observation;
-var yesterday_weather = JSON.parse(yhr.response).history.dailysummary;
+var yesterday_weather = JSON.parse(yhr.response).history.dailysummary[0];
 var tomorrow_weather = JSON.parse(thr.response).forecast.simpleforecast.forecastday[1];
 
 console.log(tomorrow_weather);
@@ -39,8 +39,8 @@ console.log(today_weather);
 function goOutToday(today, yesterday, tomorrow) {
     var this_date = new Date();
     var today_temp = today.temp_f;
-    var yesterday_temp = yesterday.meantempi;
-    var tomorrow_temp = parseInt(tomorrow.high.farenheit);  // (parseInt(tomorrow.simpleforecast[2].high.farenheit) + parseInt(tomorrow.simpleforecast[2].low.farenheit))/2 // placeholder
+    var yesterday_temp = parseInt(yesterday.meantempi);
+    var tomorrow_temp = parseInt(tomorrow.high.fahrenheit);  // (parseInt(tomorrow.simpleforecast[2].high.farenheit) + parseInt(tomorrow.simpleforecast[2].low.farenheit))/2 // placeholder
     if (parseInt(today.precip_today_in) > 1) {
         console.log("Stay inside! Water might fall from the sky!");
     } else if((this_date.getMonth() > 4) && (this_date.getMonth() < 10)) {

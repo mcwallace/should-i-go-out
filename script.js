@@ -52,7 +52,7 @@ function goOutToday(today, yesterday, tomorrow) {
     console.log("goOutToday worked!");
 }
 
-// goOutToday(today_weather, yesterday_weather, tomorrow_weather);
+goOutToday(today_weather, yesterday_weather, tomorrow_weather);
 
 
 // the rest of my CRUDE AF outline

@@ -51,7 +51,7 @@ function GoOutToday(today_weather, yesterday_weather, tomorrow_weather) {
         }
     } else {
         //winter
-        if(((today_temp - 2) > yesterday_temp) && (today_temp - 2) > tomorrow_temp)) {
+        if(((today_temp - 2) > yesterday_temp) && ((today_temp - 2) > tomorrow_temp)) {
             return "You should go out today! It's going to be noticeably warm!";
         }
     }

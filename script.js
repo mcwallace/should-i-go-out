@@ -60,5 +60,5 @@ function goOutToday(today, yesterday, tomorrow) {
 }
 
 var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
-var suggestion = document.getElementByID("suggestions");
+var suggestion = document.getElementById("suggestions");
 suggestion.textContent = goOut;

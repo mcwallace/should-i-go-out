@@ -37,12 +37,13 @@ console.log(yesterday_weather);
 console.log(today_weather);
 
 function goOutToday(today, yesterday, tomorrow) {
+    var this_date = new Date();
     var today_temp = today.temp_f;
     var yesterday_temp = yesterday.meantempi;
     var tomorrow_temp = parseInt(tomorrow.high.farenheit);  // (parseInt(tomorrow.simpleforecast[2].high.farenheit) + parseInt(tomorrow.simpleforecast[2].low.farenheit))/2 // placeholder
     if (parseInt(today.precip_today_in) > 1) {
         console.log("Stay inside! Water might fall from the sky!");
-    } else if((today.getMonth() > 4) && (today.getMonth() < 10)) {
+    } else if((this_date.getMonth() > 4) && (this_date.getMonth() < 10)) {
         // summer
         if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
             console.log("You should go out today! It's going to be noticeably cool!");

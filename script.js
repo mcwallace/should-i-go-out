@@ -16,7 +16,6 @@ var today_request = api + "/conditions/q/" + zip + ",us.json";
 var yesterday_request = api + "/yesterday/q/" + zip + ",us.json";
 var tomorrow_request = api + "/forecast/q/" + zip + ",us.json";
 
-.log("logging line by line KILL EVERYTHING");
 var xhr = new XMLHttpRequest();
 xhr.open("GET", today_request, false);
 xhr.send();

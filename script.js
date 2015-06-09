@@ -13,8 +13,8 @@ var api = "http://api.wunderground.com/api/e05c147cb6482135";
 
 // TODO: find a way to combine these queries into one query--can we get the entire week's weather in one call???
 var today_request = api + "/conditions/q/" + zip + ",us.json";
-var yesterday_request = api + "/yesterday/q" + zip + ",us.json";
-var tomorrow_request = api + "/forecast/q" + zip + ",us.json";
+var yesterday_request = api + "/yesterday/q/" + zip + ",us.json";
+var tomorrow_request = api + "/forecast/q/" + zip + ",us.json";
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", today_request, false);

@@ -112,17 +112,14 @@ p#yesterday1, p#tomorrow2 {
     margin-right:0;
 }
 .weathericons.medium {
-    margin-right:1%;
     width:17%;
     height:120px;
 }
 .weathericons.narrow {
-    margin-right:1%;
     width:10%;
     height:80px;
 }
 .weathericons.wide {
-    margin-right:1%;
     width:38%;
     height:180px;
 }

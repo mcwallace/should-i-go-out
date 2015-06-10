@@ -75,9 +75,9 @@ function goOutToday(today, yesterday, tomorrow) {
         console.log((today_temp + 3) < tomorrow_temp)
         if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
             result = "You should go out today! It's going to be noticeably cool!";
-        } else if ((today + 3) < yesterday_temp) {
+        } else if ((today_temp + 3) < yesterday_temp) {
             result = "You should go outside! It's cooler than yesterday!";
-        } else if ((today + 3) < tomorrow_temp) {
+        } else if ((today_temp + 3) < tomorrow_temp) {
             result = "Quick! Go outside today! Tomorrow will be hotter!";
         }
     } else {

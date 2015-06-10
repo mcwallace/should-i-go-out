@@ -8,13 +8,32 @@
 //should eventually switch to a different api, if traffic increases
 // http://openweathermap.org/appid  
 // https://developer.forecast.io/
+
+//////////opening variables
 var api = "http://api.wunderground.com/api/e05c147cb6482135";
 var today_weather, yesterday_weather, tomorrow_weather, zip;
+var form = document.zipform ; 
 
+zip = 19104;
+
+
+// form.addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     useZip();
+// });
+
+
+
+
+
+
+
+
+
+
+
+///on pageload
 var zip = useZip(); 
-
-console.log(zip);
-
 
 weather_list = getWeather(zip);
 today_weather = weather_list[0];
@@ -109,6 +128,7 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
 }
 
 function useZip() {
+    console.log(document.zipform.zip.value);
     zip = document.zipform.zip.value;
     zip = parseInt(zip);
     return zip; 

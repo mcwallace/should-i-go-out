@@ -157,6 +157,9 @@ p#yesterday1, p#tomorrow2 {
     .weathericons {
         margin-right:0;
     }
+    .weathericons.narrow {
+        width: 11%;
+    }
     .tbutton.zip {
         margin-left:24%;
     }

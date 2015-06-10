@@ -12,7 +12,10 @@ var zip = 19104;
 var api = "http://api.wunderground.com/api/e05c147cb6482135";
 var today_weather, yesterday_weather, tomorrow_weather ; 
 
-getWeather(zip);
+weather_list = getWeather(zip);
+today_weather = weather_list[0];
+yesterday_weather = weather_list[1];
+tomorrow_weather = weather_list[2];
 
 console.log(tomorrow_weather);
 console.log(yesterday_weather);
@@ -50,6 +53,7 @@ function getWeather(zip) {
     var yesterday_weather = JSON.parse(yhr.response).history.dailysummary[0];
     var tomorrow_weather = JSON.parse(thr.response).forecast.simpleforecast.forecastday[1];
 
+    return [today_weather, yesterday_weather, tomorrow_weather]
 }
 
 function goOutToday(today, yesterday, tomorrow) {

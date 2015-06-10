@@ -70,6 +70,9 @@ function goOutToday(today, yesterday, tomorrow) {
         result = "Stay inside! Water might fall from the sky!";
     } else if((this_date.getMonth() > 4) && (this_date.getMonth() < 10)) {
         // summer
+        console.log("summer");
+        console.log(((today_temp + 3) < yesterday_temp));
+        console.log((today_temp + 3) < tomorrow_temp)
         if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
             result = "You should go out today! It's going to be noticeably cool!";
         } else if ((today + 3) < yesterday_temp) {

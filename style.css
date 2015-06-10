@@ -151,15 +151,18 @@ p#yesterday1, p#tomorrow2 {
 }
 
 @media screen and (max-width=750px) {
-
-
-
-
-
-
-
+    input {
+        max-width:50%;
+    }
 }
-
+@media screen and (max-width=600px) {
+    .weathericons {
+        margin-right:0;
+    }
+    .tbutton.zip {
+        margin-left:24%;
+    }
+}
 
 
 

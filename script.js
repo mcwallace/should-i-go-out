@@ -65,7 +65,7 @@ function goOutToday(today, yesterday, tomorrow) {
     console.log(yesterday_temp);
     console.log(tomorrow_temp);
     //// THIS SHOULD BE FROM tomorrow[0].qpf_allday
-    if (tomorrow[0].qpf_allday.in) > 1) {
+    if (tomorrow[0].qpf_allday.in > 1) {
         console.log(tomorrow[0].qpf_allday.in);
         result = "Stay inside! Water might fall from the sky!";
     } else if((this_date.getMonth() > 4) && (this_date.getMonth() < 10)) {

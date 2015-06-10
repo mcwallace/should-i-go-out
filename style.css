@@ -33,6 +33,7 @@ p {
 }
 p#sugg_text {
     font-size:45px;
+    margin-top:40px;
 }
 p#today {
     font-size:50px;
@@ -55,15 +56,19 @@ p#yesterday1, p#tomorrow2 {
     margin-right:auto;
     text-align:center;
 }
-.topbutton {
-    width:10%;
+.topbuttons {
+    margin:5px;
+    height:100px;
+}
+.tbutton {
+    width:6%;
     height:60px;
     display:inline-block;
     background-color: #CFFFF1;
     border-radius:35px;
     text-align:center;
 }
-.topbutton.zip {
+.tbutton.zip {
     width:20%;
     height:70px;
     padding:5px;

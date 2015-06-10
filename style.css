@@ -21,6 +21,8 @@ body {
     font-family:'Amaranth', sans-serif;
     padding:15px;
     max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
 }
 h1 {
     color:#3E517A ;
@@ -31,23 +33,34 @@ label {
 p {
     color: #3E517A;
 }
+p#now {
+    font-size:22pt;
+}
 p#sugg_text {
-    font-size:45px;
+    font-size:52pt;
     margin-top:40px;
 }
 p#today {
-    font-size:50px;
-    margin:60px;
+    font-size:52pt;
+    margin-top:48px;
 }
 p#yesterday2, p#tomorrow1 {
-    font-size:30px;
-    margin:43px;
+    font-size:22pt;
+    margin-top:42px;
 }
 p#yesterday1, p#tomorrow2 {
-    font-size:12px; 
-    margin:33px;
+    margin-top:30px;
 }
 
+.attr {
+    float:right;
+    p {
+        font-size:10pt;
+    }
+    img {
+        max-width: 35%;
+    }
+}
 .suggestions {
     border-radius:35px;
     background-color:#CFFFF1;
@@ -60,6 +73,15 @@ p#yesterday1, p#tomorrow2 {
     text-align:center;
     padding:5px;
 }
+.todaysweather {
+    display:inline-block;
+    text-align:center;
+    width:32%;
+    font-size: 16pt;
+    margin-left:auto;
+    margin-right:auto;
+}
+.todaysweather
 .top-buttons {
     margin:5px;
     height:100px;
@@ -103,6 +125,7 @@ p#yesterday1, p#tomorrow2 {
     width:38%;
     height:180px;
 }
+
 #me {
     float:left;
     height:70px;
@@ -122,10 +145,21 @@ p#yesterday1, p#tomorrow2 {
     margin-right:auto;
     text-align:center;
 }
-.todaysweather {
-    display:inline-block;
-    text-align:center;
-    width:32%;
-    margin-left:auto;
-    margin-right:auto;
+
+@media screen and (max-width=750px) {
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+

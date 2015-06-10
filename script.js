@@ -13,6 +13,9 @@ var today_weather, yesterday_weather, tomorrow_weather, zip;
 
 var zip = useZip(); 
 
+console.log(zip);
+
+
 weather_list = getWeather(zip);
 today_weather = weather_list[0];
 yesterday_weather = weather_list[1];

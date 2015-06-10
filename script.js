@@ -22,19 +22,6 @@ zip = 19104;
 //     useZip();
 // });
 
-
-
-
-
-
-
-
-
-
-
-///on pageload
-var zip = useZip(); 
-
 weather_list = getWeather(zip);
 today_weather = weather_list[0];
 yesterday_weather = weather_list[1];

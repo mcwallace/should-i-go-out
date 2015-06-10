@@ -11,7 +11,7 @@
 var api = "http://api.wunderground.com/api/e05c147cb6482135";
 var today_weather, yesterday_weather, tomorrow_weather, zip;
 
-useZip(); 
+var zip = useZip(); 
 
 weather_list = getWeather(zip);
 today_weather = weather_list[0];
@@ -108,11 +108,7 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
 function useZip() {
     zip = document.zipform.zip.value;
     zip = parseInt(zip);
-    console.log(zip);
-
-    getWeather(zip);
-    goOutToday(today_weather, yesterday_weather, tomorrow_weather);
-    populateWeather(today_weather, yesterday_weather, tomorrow_weather);
+    return zip; 
 }
 
 

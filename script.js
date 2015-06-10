@@ -11,35 +11,27 @@
 
 //////////opening variables
 var api = "http://api.wunderground.com/api/e05c147cb6482135";
-var today_weather, yesterday_weather, tomorrow_weather, zip;
-var form = document.zipform ; 
+var today_weather, yesterday_weather, tomorrow_weather, zip; 
 
-zip = 19104;
-
-
-// form.addEventListener("submit", function (event) {
-//     event.preventDefault();
-//     useZip();
-// });
-
-weather_list = getWeather(zip);
-today_weather = weather_list[0];
-yesterday_weather = weather_list[1];
-tomorrow_weather = weather_list[2];
-
-console.log(tomorrow_weather);
-console.log(yesterday_weather);
-console.log(today_weather);
-
-var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
-var suggestion = document.getElementById("sugg_text");
-suggestion.textContent = goOut;
-populateWeather(today_weather, yesterday_weather, tomorrow_weather);
-
-
-
+zip = useZip;
 
 ////////////////////////functions
+
+function startup(zip) {
+    weather_list = getWeather(zip);
+    today_weather = weather_list[0];
+    yesterday_weather = weather_list[1];
+    tomorrow_weather = weather_list[2];
+
+    console.log(tomorrow_weather);
+    console.log(yesterday_weather);
+    console.log(today_weather);
+
+    var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
+    var suggestion = document.getElementById("sugg_text");
+    suggestion.textContent = goOut;
+    populateWeather(today_weather, yesterday_weather, tomorrow_weather);
+}
 
 function getWeather(zip) {
     console.log("getting weather");
@@ -111,11 +103,13 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
 
 function useZip() {
     zip = 19104 ; 
-    console.log(document.zipform.zip.value);
-    value = document.zipform.zip.value;
+    value = document.getElementById("zip").value;
+    console.log(value);
     if(value.length === 5) {
         zip = parseInt(value);
+        startup(zip);
     }
+    console.log(value);
     return zip; 
 }
 

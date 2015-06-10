@@ -56,7 +56,7 @@ p#yesterday1, p#tomorrow2 {
     text-align:center;
 }
 .topbutton {
-    width:60px;
+    width:10%;
     height:60px;
     display:inline-block;
     background-color: #CFFFF1;
@@ -64,10 +64,11 @@ p#yesterday1, p#tomorrow2 {
     text-align:center;
 }
 .topbutton.zip {
-    width:160px;
+    width:20%;
     height:70px;
     padding:5px;
     padding-top:10px;
+    margin-left:30%;
 }
 .weathericons {
     background-color:#46B1C9;

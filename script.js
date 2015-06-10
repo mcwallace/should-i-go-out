@@ -84,6 +84,7 @@ function getZip() {
     populateWeather(today_weather, yesterday_weather, tomorrow_weather);
 }
 
+getWeather(zip);
 var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
 var suggestion = document.getElementById("sugg_text");
 suggestion.textContent = goOut;

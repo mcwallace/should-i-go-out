@@ -3,14 +3,15 @@
 // GET USER LOCATION via user prompt if mobile, ip address if desktop or mobile doesn't give permissions
 
 // eventually this should be the result of a form, but now it's hardcoded to philly for testing
-var zip = 19104;
 
 
 //should eventually switch to a different api, if traffic increases
 // http://openweathermap.org/appid  
 // https://developer.forecast.io/
 var api = "http://api.wunderground.com/api/e05c147cb6482135";
-var today_weather, yesterday_weather, tomorrow_weather ; 
+var today_weather, yesterday_weather, tomorrow_weather, zip;
+
+useZip(); 
 
 weather_list = getWeather(zip);
 today_weather = weather_list[0];
@@ -87,6 +88,7 @@ function goOutToday(today, yesterday, tomorrow) {
     return result
 }
 function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
+    console.log("populating weather");
     var yesterday = document.getElementById("yesterday2");
     var tomorrow = document.getElementById("tomorrow1");
     var today = document.getElementById("today");
@@ -100,10 +102,9 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
 
 function useZip() {
     zip = document.zipform.zip.value;
-    console.log(zip);
     zip = parseInt(zip);
     console.log(zip);
-    
+
     getWeather(zip);
     goOutToday(today_weather, yesterday_weather, tomorrow_weather);
     populateWeather(today_weather, yesterday_weather, tomorrow_weather);

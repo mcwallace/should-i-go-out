@@ -63,15 +63,10 @@ function getWeather(zip) {
     var yesterday_weather = JSON.parse(yhr.response).history.dailysummary[0];
     var tomorrow_weather = JSON.parse(thr.response).forecast.simpleforecast.forecastday[1];
 
-    console.log(tomorrow_weather);
-    console.log(yesterday_weather);
-    console.log(today_weather);
-
     return [today_weather, yesterday_weather, tomorrow_weather]
 }
 
 function goOutToday(today, yesterday, tomorrow) {
-    console.log(today + " " + yesterday + " " + tomorrow);
     var this_date = new Date();
     var today_temp = today.temp_f;
     var yesterday_temp = parseInt(yesterday.meantempi);
@@ -115,9 +110,12 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
 }
 
 function useZip() {
+    zip = 19104 ; 
     console.log(document.zipform.zip.value);
-    zip = document.zipform.zip.value;
-    zip = parseInt(zip);
+    value = document.zipform.zip.value;
+    if(value.length === 5) {
+        zip = parseInt(value);
+    }
     return zip; 
 }
 

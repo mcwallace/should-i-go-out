@@ -14,6 +14,7 @@ var api = "http://api.wunderground.com/api/e05c147cb6482135";
 var today_weather, yesterday_weather, tomorrow_weather, zip; 
 
 zip = useZip;
+startup(zip);
 
 ////////////////////////functions
 
@@ -106,7 +107,7 @@ function useZip() {
     value = document.getElementById("zip").value;
     console.log(value);
     if(value.length === 5) {
-        zip = parseInt(value);
+        zip = parseInt(value);  
         startup(zip);
     }
     console.log(value);

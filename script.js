@@ -50,7 +50,7 @@ function getWeather(zip) {
 
     var today_weather = JSON.parse(xhr.response).current_observation;
     var yesterday_weather = JSON.parse(yhr.response).history.dailysummary[0];
-    var tomorrow_weather = JSON.parse(thr.response).forecast.simpleforecast.forecastday[1];
+    var tomorrow_weather = JSON.parse(thr.response).forecast.simpleforecast.forecastday;
 
     return [today_weather, yesterday_weather, tomorrow_weather]
 }
@@ -59,7 +59,7 @@ function goOutToday(today, yesterday, tomorrow) {
     var this_date = new Date();
     var today_temp = today.temp_f;
     var yesterday_temp = parseInt(yesterday.meantempi);
-    var tomorrow_temp = parseInt(tomorrow.high.fahrenheit); 
+    var tomorrow_temp = parseInt(tomorrow[1].high.fahrenheit); 
     var result = "There's no reason to go outside."; 
     if (parseInt(today.precip_today_in) > 1) {
         result = "Stay inside! Water might fall from the sky!";
@@ -96,9 +96,9 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
     yesterday.textContent = parseInt(yesterday_weather.meantempi);
     tomorrow.textContent = parseInt(tomorrow_weather.high.fahrenheit);
     today.textContent = today_weather.temp_f;
-    tod_high.textContent = parseInt(JSON.parse(thr.response).forecast.simpleforecast.forecastday[0].high.fahrenheit);
-    tod_low.textContent = parseInt(JSON.parse(thr.response).forecast.simpleforecast.forecastday[0].low.fahrenheit);
-    tod_now.textContent = JSON.parse(thr.response).forecast.simpleforecast.forecastday[0].conditions;
+    tod_high.textContent = parseInt(tomorrow_weather[0].high.fahrenheit);
+    tod_low.textContent = parseInt(tomorrow_weather[0].low.fahrenheit);
+    tod_now.textContent = tomorrow_weather[0].conditions;
 }
 
 function useZip() {

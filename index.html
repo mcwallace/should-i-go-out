@@ -15,10 +15,12 @@
             <div class="tbutton" id="me">
                 <p>Me!</p>
             </div>
-            <div class="tbutton zip" id="form">
-            <label>Zip Code:
-                <input type="text" name="zip" id="zip" autocomplete="postal-code" maxlength="5" />
-            </label>
+            <div class="tbutton zip">
+                <form name="zipform" action="" method="GET">
+                    <label>Zip Code:
+                        <input type="text" name="zip" id="zip" autocomplete="postal-code" maxlength="5" />
+                    </label>
+                </form>
             <input type="submit" value="Submit" />
             </div>
             <div class="tbutton" id="friends">
@@ -65,5 +67,5 @@
             <p id="sugg_text">Should you go outside?</p>
         </div>
     </body>
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
 </html>

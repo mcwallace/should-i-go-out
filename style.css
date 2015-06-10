@@ -37,12 +37,15 @@ p#sugg_text {
 }
 p#today {
     font-size:50px;
+    margin:60px;
 }
 p#yesterday2, p#tomorrow1 {
     font-size:30px;
+    margin:43px;
 }
 p#yesterday1, p#tomorrow2 {
     font-size:12px; 
+    margin:33px;
 }
 
 .suggestions {
@@ -55,10 +58,12 @@ p#yesterday1, p#tomorrow2 {
     margin-left:auto;
     margin-right:auto;
     text-align:center;
+    padding:5px;
 }
-.topbuttons {
+.top-buttons {
     margin:5px;
     height:100px;
+    display:inline;
 }
 .tbutton {
     width:6%;

@@ -10,27 +10,34 @@ var zip = 19104;
 // http://openweathermap.org/appid  
 // https://developer.forecast.io/
 var api = "http://api.wunderground.com/api/e05c147cb6482135";
+var today_weather, yesterday_weather, tomorrow_weather ; 
+
+
+function getWeather(zip) {
+    var today_request = api + "/conditions/q/" + zip + ",us.json";
+    var yesterday_request = api + "/yesterday/q/" + zip + ",us.json";
+    var tomorrow_request = api + "/forecast/q/" + zip + ",us.json";
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", today_request, false);
+    xhr.send();
+
+    var yhr = new XMLHttpRequest();
+    yhr.open("GET", yesterday_request, false);
+    yhr.send();
+
+    var thr = new XMLHttpRequest();
+    thr.open("GET", tomorrow_request, false);
+    thr.send()
+
+    var today_weather = JSON.parse(xhr.response).current_observation;
+    var yesterday_weather = JSON.parse(yhr.response).history.dailysummary[0];
+    var tomorrow_weather = JSON.parse(thr.response).forecast.simpleforecast.forecastday[1];
+
+}
+
 
 // TODO: find a way to combine these queries into one query--can we get the entire week's weather in one call???
-var today_request = api + "/conditions/q/" + zip + ",us.json";
-var yesterday_request = api + "/yesterday/q/" + zip + ",us.json";
-var tomorrow_request = api + "/forecast/q/" + zip + ",us.json";
-
-var xhr = new XMLHttpRequest();
-xhr.open("GET", today_request, false);
-xhr.send();
-
-var yhr = new XMLHttpRequest();
-yhr.open("GET", yesterday_request, false);
-yhr.send();
-
-var thr = new XMLHttpRequest();
-thr.open("GET", tomorrow_request, false);
-thr.send()
-
-var today_weather = JSON.parse(xhr.response).current_observation;
-var yesterday_weather = JSON.parse(yhr.response).history.dailysummary[0];
-var tomorrow_weather = JSON.parse(thr.response).forecast.simpleforecast.forecastday[1];
 
 console.log(tomorrow_weather);
 console.log(yesterday_weather);
@@ -68,6 +75,13 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
     yesterday.textContent = parseInt(yesterday_weather.meantempi);
     tomorrow.textContent = parseInt(tomorrow_weather.high.fahrenheit);
     today.textContent = today_weather.temp_f;
+}
+
+function getZip() {
+    zip = document.zipform.zip.value;
+    getWeather(zip);
+    goOutToday(today_weather, yesterday_weather, tomorrow_weather);
+    populateWeather(today_weather, yesterday_weather, tomorrow_weather);
 }
 
 var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);

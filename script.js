@@ -12,8 +12,24 @@ var zip = 19104;
 var api = "http://api.wunderground.com/api/e05c147cb6482135";
 var today_weather, yesterday_weather, tomorrow_weather ; 
 
+getWeather(zip);
+
+console.log(tomorrow_weather);
+console.log(yesterday_weather);
+console.log(today_weather);
+
+var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
+var suggestion = document.getElementById("sugg_text");
+suggestion.textContent = goOut;
+populateWeather(today_weather, yesterday_weather, tomorrow_weather);
+
+
+
+
+////////////////////////functions
 
 function getWeather(zip) {
+    console.log("getting weather");
     var today_request = api + "/conditions/q/" + zip + ",us.json";
     var yesterday_request = api + "/yesterday/q/" + zip + ",us.json";
     var tomorrow_request = api + "/forecast/q/" + zip + ",us.json";
@@ -35,13 +51,6 @@ function getWeather(zip) {
     var tomorrow_weather = JSON.parse(thr.response).forecast.simpleforecast.forecastday[1];
 
 }
-
-
-// TODO: find a way to combine these queries into one query--can we get the entire week's weather in one call???
-
-console.log(tomorrow_weather);
-console.log(yesterday_weather);
-console.log(today_weather);
 
 function goOutToday(today, yesterday, tomorrow) {
     var this_date = new Date();
@@ -84,9 +93,5 @@ function getZip() {
     populateWeather(today_weather, yesterday_weather, tomorrow_weather);
 }
 
-getWeather(zip);
-var goOut = goOutToday(today_weather, yesterday_weather, tomorrow_weather);
-var suggestion = document.getElementById("sugg_text");
-suggestion.textContent = goOut;
-populateWeather(today_weather, yesterday_weather, tomorrow_weather);
+
 

@@ -36,6 +36,7 @@ p {
 p.attr {
     font-size:10pt;
     margin-left:50%;
+    display: inline;
 }
 p#now {
     font-size:22pt;
@@ -150,12 +151,12 @@ p#yesterday1, p#tomorrow2 {
     text-align:center;
 }
 
-@media screen and (max-width=750px) {
+@media screen and (max-width: 750px) {
     input {
         max-width:50%;
     }
 }
-@media screen and (max-width=600px) {
+@media screen and (max-width: 600px) {
     .weathericons {
         margin-right:0;
     }

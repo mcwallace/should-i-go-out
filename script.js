@@ -61,18 +61,26 @@ function goOutToday(today, yesterday, tomorrow) {
     var today_temp = today.temp_f;
     var yesterday_temp = parseInt(yesterday.meantempi);
     var tomorrow_temp = parseInt(tomorrow.high.fahrenheit); 
-    var result = "The weather today isn't remarkable."; 
+    var result = "There's no reason to go outside."; 
     if (parseInt(today.precip_today_in) > 1) {
         result = "Stay inside! Water might fall from the sky!";
     } else if((this_date.getMonth() > 4) && (this_date.getMonth() < 10)) {
         // summer
         if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
             result = "You should go out today! It's going to be noticeably cool!";
+        } else if ((today + 3) < yesterday_temp) {
+            result = "You should go outside! It's cooler than yesterday!";
+        } else if ((today + 3) < tomorrow_temp) {
+            result = "Quick! Go outside today! Tomorrow will be hotter!";
         }
     } else {
         //winter
         if(((today_temp - 2) > yesterday_temp) && ((today_temp - 2) > tomorrow_temp)) {
             result = "You should go out today! It's going to be noticeably warm!";
+        } else if ((today_temp - 2) > yesterday_temp) {
+            result = "Go outside, it's warmer than yesterday!";
+        } else if ((today_temp - 2) > tomorrow_temp) {
+            result = "Go outside before it gets cold tomorrow!";
         }
     }
     console.log("goOutToday worked!");
@@ -90,8 +98,12 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
     today.textContent = today_weather.temp_f;
 }
 
-function getZip() {
+function useZip() {
     zip = document.zipform.zip.value;
+    console.log(zip);
+    zip = parseInt(zip);
+    console.log(zip);
+    
     getWeather(zip);
     goOutToday(today_weather, yesterday_weather, tomorrow_weather);
     populateWeather(today_weather, yesterday_weather, tomorrow_weather);

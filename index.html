@@ -16,12 +16,12 @@
                 <p>Me!</p>
             </div>
             <div class="tbutton zip">
-                <form name="zipform" action="useZip">
+                <form name="zipform" action="">
                     <label>Zip Code:
                         <input type="text" name="zip" id="zip" autocomplete="postal-code" maxlength="5" value="19104" />
                     </label>
-                </form>
-            <input type="submit" value="Submit" />
+                    <input type="submit" value="Submit" onClick="useZip()" />
+                    </form>
             </div>
             <div class="tbutton" id="friends">
                 <p>Friends</p>

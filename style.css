@@ -57,8 +57,13 @@ p#yesterday2, p#tomorrow1 {
     font-size:22pt;
     margin-top:42px;
 }
-img#yesterday1, img#tomorrow2 {
-    margin-top:30px;
+img#season {
+    margin-top:25px;
+    margin-bottom:-9px;
+}
+img#tomorrowimg {
+    margin-top:20px;
+    margin-bottom:-15px;
 }
 
 .attr {

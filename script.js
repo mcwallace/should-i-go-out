@@ -102,7 +102,7 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
     tod_low.textContent = parseInt(tomorrow_weather[0].low.fahrenheit);
     tod_now.textContent = tomorrow_weather[0].conditions;
     insertWeatherIcon(today_weather, "weathericon");
-    insertWeatherIcon(tomorrow_weather[0], "tomorrowimg");
+    insertWeatherIcon(tomorrow_weather[1], "tomorrowimg");
 }
 
 function insertWeatherIcon(weather, id){
@@ -110,9 +110,9 @@ function insertWeatherIcon(weather, id){
     document.getElementById(id).setAttribute("src", weather.icon_url);
 }
 function seasonImg(date) {
-    console.log("Season image");
+    console.log("season img");
     var season;
-    if ((date.getMonth > 4) || (date.getMonth < 10)) {
+    if ((date.getMonth() > 4) || (date.getMonth() < 10)) {
         season = "summer";
     } else {
         season = "winter";

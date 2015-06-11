@@ -41,11 +41,6 @@ label {
 p {
     color: #3E517A;
 }
-p.attr {
-    font-size:10pt;
-    margin-left:50%;
-    display: inline;
-}
 p#now {
     font-size:22pt;
 }
@@ -69,6 +64,9 @@ p#yesterday1, p#tomorrow2 {
 .attr {
     float:right;
     padding-top:15px;
+    p {
+        display:inline;
+    }
 }
 .suggestions {
     border-radius:35px;

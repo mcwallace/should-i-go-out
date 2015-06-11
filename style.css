@@ -41,9 +41,6 @@ label {
 p {
     color: #3E517A;
 }
-p#footer {
-    display:inline;
-}
 p#now {
     font-size:22pt;
 }
@@ -68,6 +65,9 @@ p#yesterday1, p#tomorrow2 {
     float:right;
     padding-top:15px;
     width:40%;
+}
+.footer {
+    display:inline;
 }
 .header {
     margin:5px;

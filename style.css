@@ -41,6 +41,9 @@ label {
 p {
     color: #3E517A;
 }
+p#footer {
+    display:inline;
+}
 p#now {
     font-size:22pt;
 }
@@ -60,17 +63,15 @@ p#yesterday2, p#tomorrow1 {
 p#yesterday1, p#tomorrow2 {
     margin-top:30px;
 }
-.attr p {
-    display:inline;
-}
 
 .attr {
     float:right;
     padding-top:15px;
     width:40%;
-    p {
-        display:inline;
-    }
+}
+.header {
+    margin:5px;
+    height:100px;
 }
 .suggestions {
     border-radius:35px;
@@ -91,10 +92,6 @@ p#yesterday1, p#tomorrow2 {
     font-size: 16pt;
     margin-left:auto;
     margin-right:auto;
-}
-.header {
-    margin:5px;
-    height:100px;
 }
 .tbutton.zip {
     display:inline-block;
@@ -142,6 +139,9 @@ p#yesterday1, p#tomorrow2 {
     float:right;
 }
 
+
+
+/********************** Responsive ***************************/
 @media screen and (max-width: 750px) {
     input {
         max-width:50%;

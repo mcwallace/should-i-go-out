@@ -43,7 +43,8 @@ p#now {
 }
 p#sugg_text {
     font-size:52pt;
-    margin-top:40px;
+    margin:40px 20px 0 20px;
+    display:block;
 }
 p#today {
     font-size:52pt;
@@ -163,6 +164,25 @@ p#yesterday1, p#tomorrow2 {
     .tbutton.zip {
         margin-left:24%;
     }
+}
+
+@media screen and (max-width: 500px) {
+    p#sugg_text {
+        font-size:32pt;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    p#today {
+        font-size: 40pt;
+    }
+    .tbutton.zip {
+        margin-left:16%;
+    }
+    .weathericons.wide {
+        height: 150px;
+    }
+
 }
 
 

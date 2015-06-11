@@ -100,6 +100,15 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
     tod_high.textContent = parseInt(tomorrow_weather[0].high.fahrenheit);
     tod_low.textContent = parseInt(tomorrow_weather[0].low.fahrenheit);
     tod_now.textContent = tomorrow_weather[0].conditions;
+    insertWeatherIcon(today_weather);
+}
+
+function insertWeatherIcon(weather){
+    console.log("insert weather icon");
+    var elem = document.createElement("img");
+    elem.setAttribute("src", weather.icon_url);
+    console.log(elem);
+    document.getElementById("todaynow").appendChild(elem);
 }
 
 function useZip() {

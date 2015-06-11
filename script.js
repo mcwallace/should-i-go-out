@@ -120,6 +120,7 @@ function seasonImg(date) {
     console.log(season + ".png");
 
     document.getElementById("season").setAttribute("src", season + ".png");
+    document.getElementById("seasonname").textContent = season;
 }
 
 function useZip() {

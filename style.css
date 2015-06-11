@@ -53,6 +53,10 @@ p#today {
     font-size:52pt;
     margin-top:48px;
 }
+p#seasonname{
+    font-size:8pt;
+    margin:0;
+}
 p#yesterday2, p#tomorrow1 {
     font-size:22pt;
     margin-top:42px;

@@ -58,6 +58,7 @@ function getWeather(zip) {
 function goOutToday(today, yesterday, tomorrow) {
     console.log("goOutToday");
     var this_date = new Date();
+
     var today_temp = today.temp_f;
     var yesterday_temp = parseInt(yesterday.meantempi);
     var tomorrow_temp = parseInt(tomorrow[1].high.fahrenheit); 
@@ -100,12 +101,25 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
     tod_high.textContent = parseInt(tomorrow_weather[0].high.fahrenheit);
     tod_low.textContent = parseInt(tomorrow_weather[0].low.fahrenheit);
     tod_now.textContent = tomorrow_weather[0].conditions;
-    insertWeatherIcon(today_weather);
+    insertWeatherIcon(today_weather, "weathericon");
+    insertWeatherIcon(tomorrow_weather[0], "tomorrowimg");
 }
 
-function insertWeatherIcon(weather){
+function insertWeatherIcon(weather, id){
     console.log("insert weather icon");
-    document.getElementById("weathericon").setAttribute("src", weather.icon_url);
+    document.getElementById(id).setAttribute("src", weather.icon_url);
+}
+function seasonImg(date) {
+    console.log("Season image");
+    var season;
+    if ((date.getMonth > 4) || (date.getMonth < 10)) {
+        season = "summer";
+    } else {
+        season = "winter";
+    }
+    console.log(season + ".png");
+
+    document.getElementById("season").setAttribute("src", season + ".png");
 }
 
 function useZip() {

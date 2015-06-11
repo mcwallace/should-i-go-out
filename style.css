@@ -60,6 +60,9 @@ p#yesterday2, p#tomorrow1 {
 p#yesterday1, p#tomorrow2 {
     margin-top:30px;
 }
+.attr p {
+    display:inline;
+}
 
 .attr {
     float:right;

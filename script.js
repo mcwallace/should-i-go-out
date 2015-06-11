@@ -105,10 +105,7 @@ function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
 
 function insertWeatherIcon(weather){
     console.log("insert weather icon");
-    var elem = document.createElement("img");
-    elem.setAttribute("src", weather.icon_url);
-    console.log(elem);
-    document.getElementById("todaynow").appendChild(elem);
+    document.getElementById("weathericon").setAttribute("src", weather.icon_url);
 }
 
 function useZip() {

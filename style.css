@@ -64,6 +64,7 @@ p#yesterday1, p#tomorrow2 {
 .attr {
     float:right;
     padding-top:15px;
+    width:40%;
     p {
         display:inline;
     }
@@ -126,7 +127,7 @@ p#yesterday1, p#tomorrow2 {
 }
 .wulogo {
     float:right;
-    max-width:35%;
+    max-width:65%;
 }
 
 #weathertitle {

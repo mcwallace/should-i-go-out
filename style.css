@@ -41,6 +41,9 @@ label {
 p {
     color: #3E517A;
 }
+p.weathericon-text {
+    font-size: 10pt;
+}
 p#now {
     font-size:22pt;
 }

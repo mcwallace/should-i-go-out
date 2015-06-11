@@ -43,6 +43,7 @@ p {
 }
 p.weathericon-text {
     font-size: 10pt;
+    color:white;
 }
 p#now {
     font-size:22pt;
@@ -54,18 +55,20 @@ p#sugg_text {
 }
 p#today {
     font-size:52pt;
-    margin-top:48px;
+    margin:0;
 }
 p#seasonname{
     font-size:8pt;
     margin:0;
+    color:white;
 }
 p#yesterday2, p#tomorrow1 {
     font-size:22pt;
-    margin-top:42px;
+    margin:0;
+    color:white;
 }
 img#season {
-    margin-top:25px;
+    margin-top:18px;
     margin-bottom:-9px;
 }
 img#tomorrowimg {

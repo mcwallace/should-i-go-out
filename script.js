@@ -56,23 +56,17 @@ function getWeather(zip) {
 }
 
 function goOutToday(today, yesterday, tomorrow) {
+    console.log("goOutToday");
     var this_date = new Date();
     var today_temp = today.temp_f;
     var yesterday_temp = parseInt(yesterday.meantempi);
     var tomorrow_temp = parseInt(tomorrow[1].high.fahrenheit); 
     var result = "There's no reason to go outside."; 
-    console.log(today_temp);
-    console.log(yesterday_temp);
-    console.log(tomorrow_temp);
-    //// THIS SHOULD BE FROM tomorrow[0].qpf_allday
     if (tomorrow[0].qpf_allday.in > 1) {
         console.log(tomorrow[0].qpf_allday.in);
         result = "Stay inside! Water might fall from the sky!";
     } else if((this_date.getMonth() > 4) && (this_date.getMonth() < 10)) {
         // summer
-        console.log("summer");
-        console.log(((today_temp + 3) < yesterday_temp));
-        console.log((today_temp + 3) < tomorrow_temp)
         if(((today_temp + 3) < yesterday_temp) && ((today_temp + 3) < tomorrow_temp)) {
             result = "You should go out today! It's going to be noticeably cool!";
         } else if ((today_temp + 3) < yesterday_temp) {
@@ -90,7 +84,6 @@ function goOutToday(today, yesterday, tomorrow) {
             result = "Go outside before it gets cold tomorrow!";
         }
     }
-    console.log("goOutToday worked!");
     return result
 }
 function populateWeather(today_weather, yesterday_weather, tomorrow_weather) {
@@ -117,7 +110,7 @@ function useZip() {
         zip = parseInt(value);  
         startup(zip);
     }
-    console.log(value);
+    console.log("zip = " + value);
     return zip; 
 }
 

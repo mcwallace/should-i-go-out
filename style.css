@@ -27,6 +27,13 @@ body {
 h1 {
     color:#3E517A ;
 }
+input {
+    color:#3E517A;
+    border-radius:10px;
+    font-family:'Amaranth', sans-serif;
+    font-size:10pt;
+    text-align: center;
+}
 label {
     color:#3E517A;
 }

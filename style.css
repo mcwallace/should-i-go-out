@@ -24,8 +24,9 @@ body {
     margin-left:auto;
     margin-right:auto;
 }
-h1 {
+h2 {
     color:#3E517A ;
+    margin-top:15px;
 }
 input {
     color:#3E517A;
@@ -89,18 +90,10 @@ p#yesterday1, p#tomorrow2 {
     margin-left:auto;
     margin-right:auto;
 }
-.top-buttons {
+.header {
     margin:5px;
     height:100px;
     display:inline;
-}
-.tbutton {
-    width:6%;
-    height:60px;
-    display:inline-block;
-    background-color: #CFFFF1;
-    border-radius:35px;
-    text-align:center;
 }
 .tbutton.zip {
     width:20%;
@@ -136,24 +129,12 @@ p#yesterday1, p#tomorrow2 {
     max-width:35%;
 }
 
-#me {
-    float:left;
-    height:70px;
-    width:70px;
-    border-radius:35px;
-}
-#friends {
-    float:right;
-    height:70px;
-    width:70px;
-    border-radius:35px;
-}
 #weathertitle {
     display:block;
     clear:both;
     margin-left:auto;
     margin-right:auto;
-    text-align:center;
+    text-align:right;
 }
 
 @media screen and (max-width: 750px) {
@@ -168,23 +149,20 @@ p#yesterday1, p#tomorrow2 {
     .weathericons.narrow {
         width: 11%;
     }
-    .tbutton.zip {
-        margin-left:24%;
-    }
 }
 
 @media screen and (max-width: 500px) {
     p#sugg_text {
         font-size:32pt;
     }
+    p#now {
+        font-size: 16pt;
+    }
 }
 
 @media screen and (max-width: 350px) {
     p#today {
         font-size: 40pt;
-    }
-    .tbutton.zip {
-        margin-left:16%;
     }
     .weathericons.wide {
         height: 150px;

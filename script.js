@@ -58,7 +58,7 @@ function getWeather(zip) {
 function goOutToday(today, yesterday, tomorrow) {
     console.log("goOutToday");
     var this_date = new Date();
-
+    seasonImg(this_date);
     var today_temp = today.temp_f;
     var yesterday_temp = parseInt(yesterday.meantempi);
     var tomorrow_temp = parseInt(tomorrow[1].high.fahrenheit); 

@@ -132,11 +132,12 @@ p#yesterday1, p#tomorrow2 {
 }
 
 #weathertitle {
-    display:block;
+    display:inline;
     clear:both;
     margin-left:auto;
     margin-right:auto;
     text-align:right;
+    float:right;
 }
 
 @media screen and (max-width: 750px) {

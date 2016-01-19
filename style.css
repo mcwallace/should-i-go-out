@@ -123,6 +123,7 @@ img#tomorrowimg {
     height:70px;
     padding:5px;
     padding-top:10px;
+    float:right;
 }
 .weathericons {
     background-color:#46B1C9;
@@ -170,8 +171,8 @@ img#tomorrowimg {
     clear:both;
     margin-left:auto;
     margin-right:auto;
-    text-align:right;
-    float:right;
+    text-align:left;
+    float:left;
 }
 
 

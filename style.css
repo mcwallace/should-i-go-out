@@ -79,6 +79,8 @@ img#tomorrowimg {
 .attr {
     float:right;
     padding-top:15px;
+    padding-left:15px;
+    padding-right:15px;
     margin-top:30px;
     width:100%;
     height:10%;

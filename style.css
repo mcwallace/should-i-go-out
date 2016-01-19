@@ -147,15 +147,20 @@ img#tomorrowimg {
     height:180px;
 }
 .wulogo {
-    float:right;
     max-width:65%;
 }
 
 #glyphicons {
     float:left;
 }
+#hamburger {
+    display:inline-block;
+    float:right;
+    width:10%;
+}
 #DataFrom {
     float:right;
+    width:40%;
 }
 #weathertitle {
     display:inline;

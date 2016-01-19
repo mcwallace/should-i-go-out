@@ -81,6 +81,7 @@ img#tomorrowimg {
     padding-top:15px;
     padding-left:15px;
     padding-right:15px;
+    padding-bottom:15px;
     margin-top:30px;
     width:100%;
     height:10%;
@@ -150,6 +151,12 @@ img#tomorrowimg {
     max-width:65%;
 }
 
+#glyphicons {
+    float:left;
+}
+#DataFrom {
+    float:right;
+}
 #weathertitle {
     display:inline;
     clear:both;
